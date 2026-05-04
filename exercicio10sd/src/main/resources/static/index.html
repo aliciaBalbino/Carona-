@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mural de Caronas</title>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 40px; background-color: #f4f7f6; color: #333; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 25px; max-width: 450px; margin: auto; }
+        h2 { color: #2c3e50; margin-top: 0; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; background-color: #27ae60; color: white; border: none; padding: 12px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #219150; }
+        .btn-ver { background-color: #2980b9; margin-top: 10px; }
+
+        </style>
+</head>
+<body>
+
+<div class="card">
+
+    <h2>🚗 Oferecer Carona</h2>
+    <form action="/oferecer" method="POST">
+
+        <label>Seu nome:</label>
+        <input type="text" name="motorista" placeholder="Ex.: Alicia Balbino" required>
+        <label>Destino/Bairro:</label>
+        <input type="text" name="destino" placeholder="Ex.: Estádio Maracanã" required>
+        <button type="submit">Publicar no Mural</button>
+    </form>
+
+    <form action="/mural" method="GET">
+        <button type="submit" class="btn-ver"> Visualizar Mural de Hoje</button>
+    </form>
+
+</div>
+
+</body>
+</html>
