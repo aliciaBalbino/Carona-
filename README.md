@@ -12,7 +12,7 @@
 > Aqui coloquei @Entity para mapear a classe como uma tabela no banco de dados através do JPA. Também adicionei um atributo
 >chamado ID para um nº identificador que será gerado através da minha anotação @GeneratedValue.
 >
-> 🏹 **Como é na prática?** Dessa forma, o backend armazenar e organizar as ofertas de carona.
+> 🏹 **O que isso faz?** Dessa forma, o backend armazenar e organizar as ofertas de carona.
 > Além disso, cada oferecimento será único através da chave primária gerada.
 
 
@@ -22,7 +22,7 @@
 > através de @RequestParam. Após isso, criei objetos da classe Carona e os adicionei ao mural de caronas disponíveis.
 > Também implementei @GetMapping("/mural") utilizando ModelAndView para enviar os dados do backend para a página mural.html, permitindo a renderização dinâmica das informações.
 > 
-> 🏹 **Como é na prática?**
+> 🏹 **O que isso faz?**
 > O controller atua como intermediador entre frontend e backend, recebendo requisições do usuário, processando os dados e retornando respostas
 > ou páginas dinâmicas com as informações cadastradas.
 
