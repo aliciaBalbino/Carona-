@@ -28,36 +28,33 @@
 
 
 **Estrutura:**
+## Estrutura
+
+```text
 projeto-carona/
 │
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/example/exercicio10sd/
-│   │   │       │
 │   │   │       ├── Exercicio10sdApplication.java
-│   │   │       │
 │   │   │       ├── controller/
 │   │   │       │   └── CaronaController.java
-│   │   │       │
 │   │   │       └── model/
 │   │   │           └── Carona.java
 │   │   │
 │   │   ├── resources/
-│   │   │   │
 │   │   │   ├── static/
 │   │   │   │   └── index.html
-│   │   │   │
 │   │   │   ├── templates/
 │   │   │   │   └── mural.html
-│   │   │   │
 │   │   │   └── application.properties
 │   │
 │   └── test/
 │
 ├── pom.xml
-│
 └── README.md
+```
 
 
 
@@ -95,33 +92,30 @@ projeto-carona/
 > or dynamic pages with the registered information.
 
 **Structure:**
-project-piggyback/
+## Estrutura
+
+```text
+projeto-carona/
 │
 ├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com/example/exercicio10sd/
-│ │ │ │
-│ │ │ ├── Exercicio10sdApplication.java
-│ │ │ │
-│ │ │ ├── controller/
-│ │ │ │ └── CaronaController.java
-│ │ │ │
-│ │ │ └── model/
-│ │ │ └── Carona.java
-│ │ │
-│ │ ├── resources/
-│ │ │ │
-│ │ │ ├── static/
-│ │ │ │ └── index.html
-│ │ │ │
-│ │ │ ├── templates/
-│ │ │ │ └── mural.html
-│ │ │ │
-│ │ │ └── application.properties
-│ │
-│ └── test/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/exercicio10sd/
+│   │   │       ├── Exercicio10sdApplication.java
+│   │   │       ├── controller/
+│   │   │       │   └── CaronaController.java
+│   │   │       └── model/
+│   │   │           └── Carona.java
+│   │   │
+│   │   ├── resources/
+│   │   │   ├── static/
+│   │   │   │   └── index.html
+│   │   │   ├── templates/
+│   │   │   │   └── mural.html
+│   │   │   └── application.properties
+│   │
+│   └── test/
 │
 ├── pom.xml
-│
 └── README.md
+```
