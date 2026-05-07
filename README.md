@@ -27,7 +27,6 @@
 > ou páginas dinâmicas com as informações cadastradas.
 
 
-**Estrutura:**
 ## Estrutura
 
 ```text
@@ -91,7 +90,6 @@ projeto-carona/
 > The controller acts as an intermediary between the frontend and backend, receiving user requests, processing the data, and returning responses
 > or dynamic pages with the registered information.
 
-**Structure:**
 ## Estrutura
 
 ```text
