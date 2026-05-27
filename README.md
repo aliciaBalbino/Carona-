@@ -6,6 +6,8 @@
 
 <img width="1906" height="971" alt="Preview do sistema" src="https://github.com/user-attachments/assets/aeae1f55-7397-4305-bc29-65f2436a42c3" />
 
+
+
 Aplicação web desenvolvida para cadastro e visualização de ofertas de carona, com persistência em banco de dados PostgreSQL na nuvem.
 
 Projeto criado com foco em prática de desenvolvimento backend utilizando Java e Spring Boot, conectando interface web, regras de negócio e banco de dados real.
