@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,22 +19,23 @@
 <body>
 
 <div class="card">
-
-    <h2>🚗 Oferecer Carona</h2>
-    <form action="/oferecer" method="POST">
-
+    <h2 th:text="${carona.id == null ? '🚗 Oferecer Carona' : '🚗 Editar carona'}">Título</h2>
+    <form th:action="@{/salvar}" th:object="${carona}" method="POST">
+        <input type="hidden" th:field="*{id}">
         <label>Seu nome:</label>
-        <input type="text" name="motorista" placeholder="Ex.: Alicia Balbino" required>
+        <input type="text" th:field="*{motorista}" placeholder="Ex: Ana Silva" required>
+
         <label>Destino/Bairro:</label>
-        <input type="text" name="destino" placeholder="Ex.: Estádio Maracanã" required>
-        <button type="submit">Publicar no Mural</button>
+        <input type="text" th:field="*{destino}" placeholder="Ex: Campus Centro" required>
+
+        <button type="submit">Publicar no mural</button>
     </form>
 
     <form action="/mural" method="GET">
-        <button type="submit" class="btn-ver"> Visualizar Mural de Hoje</button>
+        <button type="submit" class="btn-ver">Visualizar mural de hoje</button>
     </form>
-
 </div>
+
 
 </body>
 </html>

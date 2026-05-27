@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+target/
+exportToHTML/

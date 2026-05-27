@@ -12,27 +12,40 @@
         th { background-color: #2980b9; color: white; }
         tr:hover { background-color: #f1f1f1; }
         .back-link { display: block; margin-top: 20px; text-align: center; color: #2980b9; text-decoration: none; }
+        .btn-delete { background: #e74c3c; color: white; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-size: 14px; margin-left: 5px; }
+        .btn-delete:hover {background: #c0392b;}
+
+            .btn-edit { background: #f39c12; color: white; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-size: 14px; }
+            .btn-edit:hover { background: #d35400; }
+
     </style>
 </head>
 <body>
 
-<div class="mural-container"
-<h1>🚗 Mural de caronas disponíveis </h1>
+<div class="mural-container">
+<h1>🚗 Mural de Caronas Disponíveis </h1>
      <table>
          <thead>
          <tr>
             <th>Motorista</th>
              <th>Destino</th>
+             <th>Ações</th>
          </tr>
          </thead>
          <tbody>
          <tr th:each="c : ${caronas}">
              <td th:text="${c.motorista}"> Nome</td>
              <td th:text="${c.destino}">Destino</td>
+             <td>
+                 <a th:href="@{/(id=${c.id})}" class="btn-edit">Editar</a>
+                 <a th:href="@{/deletar/{id}(id=${c.id})}" class="btn-delete"
+                    onclick="return confirm('Excluir esta carona?')">Excluir</a>
+             </td>
+
          </tr>
          </tbody>
          </table>
-         <a href="/" class="back-link">🠔 Voltar para a página de casdastro</a>
+         <a href="/" class="back-link">🠔 Voltar para a página de cadastro</a>
 </div>
 </body>
 </html>

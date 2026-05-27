@@ -1,19 +1,21 @@
 package com.example.exercicio10sd.controller;
 
 import com.example.exercicio10sd.model.Carona;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.exercicio10sd.repository.CaronaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController()
+@Controller()
 public class CaronaController {
 
-    private List<Carona> muralDeCaronas = new ArrayList<>();
+    @Autowired
+    private  CaronaRepository repository;
 
     @PostMapping("/oferecer")
     public String oferecerCarona (@RequestParam String motorista, @RequestParam String destino){
@@ -22,19 +24,42 @@ public class CaronaController {
         c.setMotorista(motorista);
         c.setDestino(destino);
 
-    muralDeCaronas.add(c);
-    return "<html><body style='font-family:sans-serif; text-align:center; padding:50px;'>" +
-            "<h1>✅ Carona publicada!</h1>" +
-            "<p>Obrigado, " + motorista + ". Seu anúncio já está no sistema distribuído.</p>" +
-            "<a href='/index.html'>Voltar para o início</a>" +
-            "</body></html>";
+        repository.save(c);
+        return "redirect:/mural";
+    }
+
+    @PostMapping("/salvar")
+    public String salvar (@ModelAttribute Carona carona){
+
+        repository.save(carona);
+    return "redirect:/mural";
+
     }
 
     @GetMapping("/mural")
     public ModelAndView verMural (){
         ModelAndView mv = new ModelAndView("mural");
-        mv.addObject("caronas", muralDeCaronas);
+        mv.addObject("caronas", repository.findAll());
         return mv;
 
     }
+
+    @GetMapping("/deletar/{id}")
+    public String deletarCarona (@PathVariable Long id) {
+
+        repository.deleteById(id);
+        return "redirect:/mural";
+    }
+
+    @GetMapping("/")
+    public ModelAndView abrirIndex(@RequestParam(required = false) Long id) {
+        ModelAndView mv = new ModelAndView("index");
+        if (id != null) {
+            mv.addObject("carona", repository.findById(id).get());
+        } else {
+            mv.addObject("carona", new Carona());
+        }
+        return mv;
+    }
+
 }
