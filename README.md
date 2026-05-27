@@ -1,119 +1,127 @@
-🚗**Sistema de Caronas com 🍃Spring Boot**
+## 🚗 Sistema de Caronas — 🍃 Spring Boot + ⚡ PostgreSQL
 
-🦾**Tecnologias usadas até 04/05/26:**
-> Dependências: Dev Tools, Spring Web + Thymeleaf
+## 🌎English & Portuguese
 
-> 
+### Preview do sistema
 
-🏗️**Arquitetura MVC:**
-> Criei 2 pacotes:
+<img width="1906" height="971" alt="Preview do sistema" src="https://github.com/user-attachments/assets/aeae1f55-7397-4305-bc29-65f2436a42c3" />
 
-> 📊📂**1. Pacote Model:** Para modelar os dados da aplicação, criei 2 variáveis (motorista e destino) com getters and setters para encapsulamento dos dados.
-> Aqui coloquei @Entity para mapear a classe como uma tabela no banco de dados através do JPA. Também adicionei um atributo
->chamado ID para um nº identificador que será gerado através da minha anotação @GeneratedValue.
->
-> 🏹 **O que isso faz?** Dessa forma, o backend armazenar e organizar as ofertas de carona.
-> Além disso, cada oferecimento será único através da chave primária gerada.
+Aplicação web desenvolvida para cadastro e visualização de ofertas de carona, com persistência em banco de dados PostgreSQL na nuvem.
 
+Projeto criado com foco em prática de desenvolvimento backend utilizando Java e Spring Boot, conectando interface web, regras de negócio e banco de dados real.
 
-> 📂🎮**2. Pacote Controller:**
-> Criei a classe CaronaController utilizando @RestController para controlar as requisições HTTP da aplicação. Também desenvolvi
-> uma lista com ArrayList para armazenar temporariamente as caronas cadastradas. Utilizei @PostMapping("/oferecer") para receber os dados enviados pelo formulário HTML
-> através de @RequestParam. Após isso, criei objetos da classe Carona e os adicionei ao mural de caronas disponíveis.
-> Também implementei @GetMapping("/mural") utilizando ModelAndView para enviar os dados do backend para a página mural.html, permitindo a renderização dinâmica das informações.
-> 
-> 🏹 **O que isso faz?**
-> O controller atua como intermediador entre frontend e backend, recebendo requisições do usuário, processando os dados e retornando respostas
-> ou páginas dinâmicas com as informações cadastradas.
+---
 
+## Tecnologias utilizadas
 
-## Estrutura
+- Java
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- PostgreSQL
+- Supabase
+- Thymeleaf
+- HTML5
+- CSS3
+- Maven
+- Git
+- GitHub
 
-```text
-projeto-carona/
+---
+
+## Funcionalidades
+
+- Cadastro de caronas via formulário HTML
+- Visualização dinâmica das caronas cadastradas
+- Persistência em banco PostgreSQL hospedado na nuvem
+- Integração entre Controller + Repository + Database
+- Renderização dinâmica com Thymeleaf
+- Geração automática de tabelas com JPA/Hibernate
+- Controle de acesso no banco com Row Level Security (RLS)
+
+---
+
+## Arquitetura do Projeto
+
+Estruturado seguindo padrão MVC:
+
+```bash
+src/main/java/com/example/exercicio10sd
 │
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/exercicio10sd/
-│   │   │       ├── Exercicio10sdApplication.java
-│   │   │       ├── controller/
-│   │   │       │   └── CaronaController.java
-│   │   │       └── model/
-│   │   │           └── Carona.java
-│   │   │
-│   │   ├── resources/
-│   │   │   ├── static/
-│   │   │   │   └── index.html
-│   │   │   ├── templates/
-│   │   │   │   └── mural.html
-│   │   │   └── application.properties
-│   │
-│   └── test/
+├── controller
+│   └── CaronaController.java
 │
-├── pom.xml
-└── README.md
+├── model
+│   └── Carona.java
+│
+├── repository
+│   └── CaronaRepository.java
+│
+└── Exercicio10sdApplication.java
 ```
 
+---
 
+# English
 
-**English:**
-🚗**Ride-sharing System with 🍃Spring Boot**
+## 🚗 Ridesharing System — 🍃 Spring Boot + ⚡ PostgreSQL
 
-🦾**Technologies used until 04/05/26:**
-> Dependencies: Dev Tools, Spring Web + Thymeleaf
+### System Preview
 
->
+<img width="1906" height="971" alt="System Preview" src="https://github.com/user-attachments/assets/aeae1f55-7397-4305-bc29-65f2436a42c3" />
 
-🏗️**MVC Architecture:**
-> I created 2 packages:
+Web application developed for registering and displaying ridesharing offers, with persistence in a cloud-hosted PostgreSQL database.
 
-> 📊📂**1. Model Package:** To model the application data, I created 2 variables (driver and destination) with getters and setters for data encapsulation.
+This project was built to practice backend development using Java and Spring Boot, integrating web interface, business logic, and real database persistence.
 
-> Here I used @Entity to map the class as a table in the database using JPA. I also added an attribute
-> called ID for an identifier number that will be generated through my @GeneratedValue annotation.
+---
 
->
-> 🏹 **How ​​does it work in practice?** In this way, the backend stores and organizes ride-sharing offers.
+## Technologies Used
 
-> In addition, each offer will be unique through the generated primary key.
+- Java
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- PostgreSQL
+- Supabase
+- Thymeleaf
+- HTML5
+- CSS3
+- Maven
+- Git
+- GitHub
 
-> 📂🎮**2. Controller Package:**
-> I created the CaronaController class using @RestController to control the application's HTTP requests. I also developed
-> a list with ArrayList to temporarily store the registered rides. I used @PostMapping("/offer") to receive the data sent by the HTML form
-> through @RequestParam. After that, I created objects of the Carona class and added them to the available rides board.
+---
 
-> I also implemented @GetMapping("/board") using ModelAndView to send the data from the backend to the mural.html page, allowing dynamic rendering of the information.
+## Features
 
->
-> 🏹 **How ​​is it in practice?**
-> The controller acts as an intermediary between the frontend and backend, receiving user requests, processing the data, and returning responses
-> or dynamic pages with the registered information.
+- Ride registration through HTML form
+- Dynamic visualization of registered rides
+- Persistence using cloud PostgreSQL database
+- Controller + Repository + Database integration
+- Dynamic rendering with Thymeleaf
+- Automatic schema generation using JPA/Hibernate
+- Row Level Security (RLS) configuration for database protection
 
-## Estrutura
+---
 
-```text
-projeto-carona/
+## Project Architecture
+
+Structured using MVC pattern:
+
+```bash
+src/main/java/com/example/exercicio10sd
 │
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/exercicio10sd/
-│   │   │       ├── Exercicio10sdApplication.java
-│   │   │       ├── controller/
-│   │   │       │   └── CaronaController.java
-│   │   │       └── model/
-│   │   │           └── Carona.java
-│   │   │
-│   │   ├── resources/
-│   │   │   ├── static/
-│   │   │   │   └── index.html
-│   │   │   ├── templates/
-│   │   │   │   └── mural.html
-│   │   │   └── application.properties
-│   │
-│   └── test/
+├── controller
+│   └── CaronaController.java
 │
-├── pom.xml
-└── README.md
+├── model
+│   └── Carona.java
+│
+├── repository
+│   └── CaronaRepository.java
+│
+└── Exercicio10sdApplication.java
 ```
